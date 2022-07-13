@@ -1,0 +1,14 @@
+#!/bin/sh
+
+post_install() {
+  cat << END
+╔════════════════════════════════════════════════════════════════════════════╗
+║ IMPORTANT: Install "libxft-bgra" from the AUR(replace existing "libxft"    ║
+║ package) to prevent st from crashing when displaying color emojis.         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+END
+}
+
+post_upgrade() {
+  post_install
+}
