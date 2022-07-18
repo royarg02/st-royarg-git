@@ -23,6 +23,9 @@ pkgver() {
 
 build() {
   cd "$_pkgname"
+  # Remove terminfo entries owned by ncurses
+  sed '/st|/,/^$/d; /st-256color|/,/^$/d' st.info > st.info.tmp
+  mv st.info.tmp st.info
   make \
     X11INC=/usr/include/X11 X11LIB=/usr/lib/X11
 }
