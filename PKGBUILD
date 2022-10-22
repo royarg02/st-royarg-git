@@ -12,7 +12,6 @@ makedepends=('ncurses' 'git')
 optdepends=('xorg-xrdb: for loading X resources')
 provides=("$_pkgname")
 conflicts=("$_pkgname" "$_pkgname-git")
-install="$pkgname.install"
 source=("git+$url.git")
 md5sums=('SKIP')
 
